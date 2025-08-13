@@ -1,0 +1,21 @@
+
+
+
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="card shadow-sm p-4 mb-4">
+    <h2 class="text-warning fw-bold text-center mb-3">Create Your Blog Today</h2>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="mb-3">
+            {{ form }}
+        </fieldset>
+        <div class="d-grid">
+            <button class="btn btn-warning text-dark fw-bold">Sign Up</button>
+        </div>
+    </form>
+    <small class="d-block text-center mt-3">
+        Already have an account? <a href="{% url 'login' %}" class="text-decoration-none fw-bold">Login</a>
+    </small>
+</div>
+{% endblock content %}
