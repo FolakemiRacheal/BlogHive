@@ -1,0 +1,14 @@
+
+
+    {% extends "blog/base.html" %}
+{% block content %}
+   
+    <img class="rounded-circle article-img" src="{{ object.author.profile.image.url }}">
+    <div class="post-card">
+        <h1 class="text-warning">{{object.title}}</h1>
+        <p class="text-muted small">By <strong>{{object.author}}</strong> on {{object.date_posted|date:"F d, Y"}}</p>
+        
+        <p>{{object.content}}</p>
+    </div>
+   
+{% endblock %}
