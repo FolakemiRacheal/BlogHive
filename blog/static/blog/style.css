@@ -1,39 +1,59 @@
 /* General blog style */
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: black;
+  background-color: #121212;
+  color: #f1f1f1;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Post styling */
+/* Sidebar */
+#sidebar {
+  min-width: 220px;
+  transition: all 0.3s ease-in-out;
+}
+#sidebar .nav-link:hover {
+  background: #FFD700;
+  color: #000 !important;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+/* Post Cards */
 .post-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 1.5rem;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-    animation: fadeIn 0.8s ease;
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .post-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
 }
-
-/* Buttons */
-button, .btn {
-    border-radius: 30px !important;
-    transition: all 0.3s ease;
-}
-
-button:hover, .btn:hover {
-    transform: scale(1.05);
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;   /* makes it a perfect circle */
+  object-fit: cover;    /* crop nicely */
+  border: 2px solid #ffc107; /* yellow border */
 }
 
 
+/* Profile Animations */
+.animate-profile {
+  animation: fadeInUp 1s ease-in-out;
+}
+@keyframes fadeInUp {
+  from {opacity: 0; transform: translateY(30px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-/* Animation */
+/* Alerts Fade-in */
+.animate-fade {
+  animation: fadeIn 0.8s ease-in-out;
+}
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+  from {opacity: 0;}
+  to {opacity: 1;}
 }

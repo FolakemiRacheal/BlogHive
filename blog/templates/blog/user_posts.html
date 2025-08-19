@@ -1,11 +1,15 @@
     {% extends "blog/base.html" %}
 {% block content %}
+<h1>{{ view.kwargs.username}} Posts ({{ page_obj.paginator.count}})</h1>
     {% for post in posts %}
     <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
     <div class="post-card">
         <h1 class="text-warning">{{post.title}}</h1>
-        <p class="text-muted small">By <strong>{{post.author}}</strong> on {{post.date_posted|date:"F d, Y"}}</p>
-        <p class="text-danger" >{{post.content}}</p>
+        <p class="text-muted small">{{post.date_posted|date:"F d, Y"}}</p>
+        <a href="{% url'user-posts' post.author.username %}">{{post.author}}</a>
+        
+        <p>{{post.content}}</p>
+
     </div>
     {% endfor %}
     {% if is_paginated %}
